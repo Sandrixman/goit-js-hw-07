@@ -10,7 +10,7 @@ function createGaleryItem(galleryItems) {
     return galleryItems
         .map(({ preview, original, description }) => {
             return `<div class="gallery__item">
-        <a class="gallery__link" href="#">
+        <a class="gallery__link" href="">
         <img
         class="gallery__image"
         src="${preview}"
@@ -24,7 +24,7 @@ function createGaleryItem(galleryItems) {
 }
 
 function toggleModal(e) {
-    // e.preventDefault();
+    e.preventDefault();
 
     const modal = basicLightbox.create(
         `<img src="${e.target.dataset.source}">`,

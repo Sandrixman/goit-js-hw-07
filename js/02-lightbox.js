@@ -5,8 +5,6 @@ const gallery = document.querySelector(".gallery");
 
 gallery.insertAdjacentHTML("beforeend", createGaleryItem(galleryItems));
 
-gallery.addEventListener("click", toggleModal);
-
 function createGaleryItem(galleryItems) {
     return galleryItems
         .map(({ preview, original, description }) => {
@@ -21,12 +19,7 @@ function createGaleryItem(galleryItems) {
         .join("");
 }
 
-function toggleModal(e) {
-    e.preventDefault();
-
-    const modal = new SimpleLightbox('.gallery a', {
-        captionsData: 'alt',
-        captionDelay: 250,
-    });
-
-}
+new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+});
